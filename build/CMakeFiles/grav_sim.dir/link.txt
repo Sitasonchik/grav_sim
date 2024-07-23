@@ -1,1 +1,0 @@
-/usr/bin/c++ -rdynamic CMakeFiles/grav_sim.dir/main.cpp.o -o grav_sim   -L/home/nikita/progs/grav_sim/SFML/lib  -Wl,-rpath,/home/nikita/progs/grav_sim/SFML/lib -lsfml-graphics -lsfml-window -lsfml-system

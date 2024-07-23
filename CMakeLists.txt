@@ -1,6 +1,6 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 3.5)
 project(grav_sim)
-include_directories($(workspaceFolder)/SFML/include)
+include_directories(${CMAKE_SOURCE_DIR}/SFML/include)
 link_directories(${CMAKE_SOURCE_DIR}/SFML/lib)
 set(SFML_COMPONENTS graphics window system)
 add_executable(grav_sim main.cpp)
