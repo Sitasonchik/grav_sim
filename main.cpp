@@ -115,7 +115,7 @@ int main() {
 	srand(0);
 	const int countPlanet = 4;
 	sf::Texture texture;
-	texture.loadFromFile("/home/nikita/progs/grav_sim/img/fon.png");
+	texture.loadFromFile("../img/fon.png");
 	sf::Sprite fon;
 	fon.setTexture(texture);
 	fon.setPosition(0, 0);
