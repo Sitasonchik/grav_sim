@@ -49,12 +49,12 @@ cmake_ninja_workdir = /home/nikita/progs/grav_sim/build/
 
 build cmake_object_order_depends_target_grav_sim: phony || .
 
-build CMakeFiles/grav_sim.dir/main.cpp.o: CXX_COMPILER__grav_sim_unscanned_Debug /home/nikita/progs/grav_sim/main.cpp || cmake_object_order_depends_target_grav_sim
-  DEP_FILE = CMakeFiles/grav_sim.dir/main.cpp.o.d
+build CMakeFiles/grav_sim.dir/src/main.cpp.o: CXX_COMPILER__grav_sim_unscanned_Debug /home/nikita/progs/grav_sim/src/main.cpp || cmake_object_order_depends_target_grav_sim
+  DEP_FILE = CMakeFiles/grav_sim.dir/src/main.cpp.o.d
   FLAGS = -g
-  INCLUDES = -I/home/nikita/progs/grav_sim/SFML/include
+  INCLUDES = -I/home/nikita/progs/grav_sim/SFML/include -I/home/nikita/progs/grav_sim/include -I/home/nikita/progs/grav_sim/.
   OBJECT_DIR = CMakeFiles/grav_sim.dir
-  OBJECT_FILE_DIR = CMakeFiles/grav_sim.dir
+  OBJECT_FILE_DIR = CMakeFiles/grav_sim.dir/src
 
 
 # =============================================================================
@@ -64,7 +64,7 @@ build CMakeFiles/grav_sim.dir/main.cpp.o: CXX_COMPILER__grav_sim_unscanned_Debug
 #############################################
 # Link the executable grav_sim
 
-build grav_sim: CXX_EXECUTABLE_LINKER__grav_sim_Debug CMakeFiles/grav_sim.dir/main.cpp.o
+build grav_sim: CXX_EXECUTABLE_LINKER__grav_sim_Debug CMakeFiles/grav_sim.dir/src/main.cpp.o
   FLAGS = -g
   LINK_LIBRARIES = -Wl,-rpath,/home/nikita/progs/grav_sim/SFML/lib  -lsfml-graphics  -lsfml-window  -lsfml-system
   LINK_PATH = -L/home/nikita/progs/grav_sim/SFML/lib
