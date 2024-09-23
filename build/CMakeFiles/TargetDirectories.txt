@@ -1,3 +1,0 @@
-/home/nikita/progs/grav_sim/build/CMakeFiles/grav_sim.dir
-/home/nikita/progs/grav_sim/build/CMakeFiles/edit_cache.dir
-/home/nikita/progs/grav_sim/build/CMakeFiles/rebuild_cache.dir
