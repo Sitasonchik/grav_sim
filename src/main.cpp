@@ -11,11 +11,10 @@ int main() {
 	sf::Sprite fon;
 	fon.setTexture(texture);
 	fon.setPosition(0, 0);
-	const int countPlanet = 3;
+	const int countPlanet = 2;
 	obj planet[countPlanet];
 	planet[0].set(blackhole*2, 1, 100);
 	planet[1].set(moon*1000, 3, -100,-200, 20);
-	planet[2].set(blackhole/10, 10, -100, 200, -1, -10);
 	
 	for(int i = 0; i < countPlanet; i++) {
 		planet[i].col(rand()%6);
