@@ -1,7 +1,7 @@
 [
 {
   "directory": "/home/nikita/progs/grav_sim/build",
-  "command": "/usr/bin/g++ -I/home/nikita/progs/grav_sim/SFML/include -I/home/nikita/progs/grav_sim/include -I/home/nikita/progs/grav_sim/. -g -o CMakeFiles/grav_sim.dir/src/main.cpp.o -c /home/nikita/progs/grav_sim/src/main.cpp",
+  "command": "/usr/bin/g++ -I/home/nikita/progs/grav_sim/libs/SFML/include -I/home/nikita/progs/grav_sim/include -I/home/nikita/progs/grav_sim/. -g -o CMakeFiles/grav_sim.dir/src/main.cpp.o -c /home/nikita/progs/grav_sim/src/main.cpp",
   "file": "/home/nikita/progs/grav_sim/src/main.cpp",
   "output": "CMakeFiles/grav_sim.dir/src/main.cpp.o"
 }
