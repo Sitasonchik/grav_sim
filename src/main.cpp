@@ -1,5 +1,4 @@
 #include "class.h"
-#include <unistd.h>
 
 
 int main() {
