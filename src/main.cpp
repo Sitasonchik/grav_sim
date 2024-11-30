@@ -19,24 +19,30 @@ int main() {
 		planet[i].col(rand()%6);
 	}
 
-	while (win.isOpen()){
-		check_win();
-		win.clear();
+	double t = clock();
 
-		for (int i = 0; i < countPlanet; i++){ 
-			for (int j = 0; j < countPlanet; j++){
-				if(i != j){
-					planet[i].boom(planet[i], planet[j]);
-					planet[i].setvec(planet[j].x - planet[i].x, planet[j].y - planet[i].y, planet[j].m);
+	while (win.isOpen()){
+		if((clock() - t)/CLOCKS_PER_SEC >= 1/10){
+			t = clock();
+
+			check_win();
+			win.clear();
+			
+			for (int i = 0; i < countPlanet; i++){ 
+				for (int j = 0; j < countPlanet; j++){
+					if(i != j){
+						planet[i].boom(planet[i], planet[j]);
+						planet[i].setvec(planet[j].x - planet[i].x, planet[j].y - planet[i].y, planet[j].m);
+					}
 				}
 			}
+			win.draw(fon);
+			for(int i = 0; i < countPlanet; i++)
+				planet[i].mov(0.001, 0.001);
+			for(int i = 0; i < countPlanet; i++){
+				planet[i].draw();
+			}
+			win.display();
 		}
-		win.draw(fon);
-		for(int i = 0; i < countPlanet; i++)
-			planet[i].mov(0.001, 0.001);
-		for(int i = 0; i < countPlanet; i++){
-			planet[i].draw();
-		}
-		win.display();
 	}
 }

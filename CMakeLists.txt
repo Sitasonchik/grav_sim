@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.10)
 project(grav_sim)
 
 set(SFML_COMPONENTS graphics window system)

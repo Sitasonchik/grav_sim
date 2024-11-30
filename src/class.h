@@ -50,6 +50,7 @@ public:
 	}
 
 	void setvec(double x, double y, double m2) {
+		if(!isboom){
 		float r = sqrt(powf(x*pixel,2) + powf(y*pixel,2));
 		if (x > 0)
 			vec[0] += (m * m2 / powf(r, 2)) / m;
@@ -59,6 +60,7 @@ public:
 			vec[1] += (m * m2 / powf(r, 2)) / m;
 		else if(y != 0)
 			vec[1] -= (m * m2 / powf(r, 2)) / m;
+		}
 	}
 
 	void col(int k) {
@@ -75,14 +77,16 @@ public:
 	}
 
 	void boom(obj& planet1, obj& planet2){ // kostil +- kogda ne len buded ispravlu poka normalno rabotaet
-		if(planet1.x <= planet2.x + planet2.r   && planet1.x  >= planet2.x - planet2.r ){
-			if(planet1.y <= planet2.y + planet2.r  && planet1.y >= planet2.y - planet2.r  ){
-				if(planet1.isboom != 1 && planet2.isboom != 1){
-					if (planet2.m > planet1.m){
-						planet1.isboom = 1;
-						planet1.col(7);
-						planet2.m += planet1.m;
-						planet1.m = 0.1;
+		if(!isboom){
+				if(planet1.x <= planet2.x + planet2.r   && planet1.x  >= planet2.x - planet2.r ){
+					if(planet1.y <= planet2.y + planet2.r  && planet1.y >= planet2.y - planet2.r  ){
+						if(planet1.isboom != 1 && planet2.isboom != 1){
+							if (planet2.m > planet1.m){
+								planet1.isboom = 1;
+								planet1.col(7);
+								planet2.m += planet1.m;
+								planet1.m = 0.1;
+						}
 					}
 				}
 			}
