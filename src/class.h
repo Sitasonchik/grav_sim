@@ -8,8 +8,6 @@ public:
 	float x;
 	float y;
 	double Rg;
-	float x1;
-	float x2;
 	bool isboom = 0;
 	bool isBlackHole = 0;
 	std::vector<float> vec = {0,0};
@@ -40,9 +38,11 @@ public:
 	}
 	
 	void mov(float x, float y) {
-		object.move(x * vec[0], y * vec[1]);
-		this->x += x * vec[0];
-		this->y += y * vec[1];
+		if(!isboom){
+			object.move(x * vec[0], y * vec[1]);
+			this->x += x * vec[0];
+			this->y += y * vec[1];
+		}
 	}
 
 	void draw() {
@@ -78,7 +78,7 @@ public:
 
 	void boom(obj& planet1, obj& planet2){ // kostil +- kogda ne len buded ispravlu poka normalno rabotaet
 		if(!isboom){
-				if(planet1.x <= planet2.x + planet2.r   && planet1.x  >= planet2.x - planet2.r ){
+				if(planet1.x + planet1.r <= planet2.x + planet2.r   && planet1.x - planet1.r  >= planet2.x - planet2.r ){
 					if(planet1.y <= planet2.y + planet2.r  && planet1.y >= planet2.y - planet2.r  ){
 						if(planet1.isboom != 1 && planet2.isboom != 1){
 							if (planet2.m > planet1.m){
@@ -86,6 +86,7 @@ public:
 								planet1.col(7);
 								planet2.m += planet1.m;
 								planet1.m = 0.1;
+								planet1.r = 0;
 						}
 					}
 				}
