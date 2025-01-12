@@ -12,8 +12,8 @@ int main(void) {
 	fon.setPosition(0, 0);
 	const int countPlanet = rand() % 20 + 2;
 
-	obj planet[countPlanet];
-
+	obj* planet = new obj[countPlanet];
+	
 	for(int i = 1; i < countPlanet; i++){
 		if(rand() % 2 == 0){
 			planet[i].set(Earhtmass * (rand() % 20), rand()%7 + 6,randomcord(0), randomcord(1), randomvec(), randomvec());
